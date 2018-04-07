@@ -1,3 +1,5 @@
+package contracts
+
 import org.springframework.cloud.contract.spec.Contract;
 
 
@@ -7,6 +9,8 @@ Contract.make {
         method POST()
         body(
                 age: value(regex('[2-9][0-9]'))
+
+               //file('request.json')
         )
         headers{
             contentType(applicationJson())

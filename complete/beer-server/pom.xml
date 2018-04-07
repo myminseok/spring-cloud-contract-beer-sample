@@ -14,7 +14,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.0.0.RELEASE</version>
+		<version>1.5.11.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
@@ -22,8 +22,22 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
-		<spring-cloud.version>Finchley.M9</spring-cloud.version>
+		<spring-cloud.version>Edgware.SR3</spring-cloud.version>
 	</properties>
+
+	<!--<parent>-->
+	<!--<groupId>org.springframework.boot</groupId>-->
+	<!--<artifactId>spring-boot-starter-parent</artifactId>-->
+	<!--<version>2.0.0.RELEASE</version>-->
+	<!--<relativePath/> &lt;!&ndash; lookup parent from repository &ndash;&gt;-->
+	<!--</parent>-->
+
+	<!--<properties>-->
+	<!--<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>-->
+	<!--<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>-->
+	<!--<java.version>1.8</java.version>-->
+	<!--<spring-cloud.version>Finchley.M9</spring-cloud.version>-->
+	<!--</properties>-->
 
 	<dependencies>
 		<dependency>
@@ -45,6 +59,7 @@
 			<artifactId>spring-cloud-starter-contract-verifier</artifactId>
 			<scope>test</scope>
 		</dependency>
+
 	</dependencies>
 
 	<dependencyManagement>
@@ -72,6 +87,18 @@
 				<configuration>
 					<baseClassForTests>com.example.beerserver.BaseClass</baseClassForTests>
 				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>org.springframework.cloud</groupId>
+						<artifactId>spring-cloud-contract-spec-pact</artifactId>
+						<version>1.2.4.RELEASE</version>
+					</dependency>
+					<dependency>
+						<groupId>au.com.dius</groupId>
+						<artifactId>pact-jvm-model</artifactId>
+						<version>2.4.18</version>
+					</dependency>
+				</dependencies>
 			</plugin>
 		</plugins>
 	</build>
